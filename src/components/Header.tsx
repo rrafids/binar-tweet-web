@@ -8,7 +8,8 @@ interface tokenInitialState {
 
 export default function Header() {
   // TODO: Get token from redux
-  const token: tokenInitialState = useSelector(selectToken);
+  const tokenState = useSelector(selectToken);
+  const token = tokenState as unknown as tokenInitialState;
 
   const dispatch = useDispatch();
 
@@ -20,7 +21,7 @@ export default function Header() {
   };
 
   return (
-    <div className="flex justify-between">
+    <div className='flex justify-between'>
       <h1 className='font-bold text-3xl'>Home</h1>
       {token.token !== '' ? (
         <button
