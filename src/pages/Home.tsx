@@ -18,7 +18,7 @@ interface TweetEntity {
   user: UserEntity;
 }
 
-const tweets_api_base_url = 'http://localhost:8082';
+const tweets_api_base_url = 'https://binar-tweet-api-production.up.railway.app';
 
 export default function Home() {
   const [tweets, setTweets] = useState<TweetEntity[]>([]);
